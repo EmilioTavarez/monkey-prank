@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    #loading {
+      font-size: 1.5rem;
+      opacity: 0.85;
+    }
+    #prank {
+      display: none;
+    }
+    img {
+      max-width: 90vw;
+      max-height: 70vh;
+      border-radius: 14px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    }
+    h2 {
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loading">Loading Facebook content…</div>
+
+<div id="prank">
+  <img src="https://i.imgur.com/3ZQ3Z8G.png" alt="Punch the Monkey">
+  <h2>You got punched by the monkey 🐒💥</h2>
+</div>
+
+<audio id="boom" preload="auto">
+  <source src="https://www.myinstants.com/media/sounds/vine-boom.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("prank").style.display = "block";
+
+    const boom = document.getElementById("boom");
+    boom.volume = 1.0;
+    boom.play();
+  }, 2500);
+</script>
+
+</body>
+</html>
